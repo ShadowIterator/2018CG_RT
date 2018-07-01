@@ -1,0 +1,93 @@
+background
+color= 0.1 0.1 0.1
+end
+
+camera
+O= 1 5 2
+N= -0.1 -0.5 -0.2
+shade_quality= 4
+drefl_quality= 4
+image_H= 512
+image_W= 826
+//	image_H= 760
+//	image_W= 1240
+lens_H= 0.6
+lens_W= 1.0
+end
+
+light area
+O= 3 3 7
+Dx= 10 0 0
+Dy= 0 10 0
+color= 1 1 1
+end
+
+primitive triangle
+P1= 2 0 0
+P2= 0 2 0
+P3= 0 0 2
+refr= 1
+rindex= 1.7
+absor= 0 1 0
+//color= 1 1 1
+//diff= 0.1
+//spec= 0.9
+//refl= 0.9
+//drefl= 0
+end
+
+primitive plane
+N= 0 0 1
+R= 0
+color= 1 1 1
+//diff= 0.1
+//spec= 0.9
+//refl= 0.9
+//drefl= 0
+diff= 0.9
+spec= 0.1
+refl= 0.9
+drefl= 0.95
+Dx= 1 0 0
+Dy= 0 1 0
+end
+
+primitive sphere
+	O= 0.3 0.3 0.3
+	R= 0.2
+	color= 1 1 1
+	texture= marble.bmp
+	De= 0 0 1
+	Dc= 0 1 0
+	diff= 0.45
+	spec= 0.25
+	refl= 0.3
+	drefl= 0.55
+end
+
+
+primitive plane
+N= 1 0 0
+R= 0
+color= 1 1 1
+diff= 0.9
+spec= 0.1
+refl= 0.9
+drefl= 0.95
+texture= floor.bmp
+Dx= 0 5 0
+Dy= 0 0 5
+end
+
+primitive plane
+N= 0 1 0
+R= 0
+color= 1 1 1
+diff= 0.9
+spec= 0.1
+refl= 0.9
+drefl= 0.95
+texture= floor.bmp
+Dx= 5 0 0
+Dy= 0 0 5
+end

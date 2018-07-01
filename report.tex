@@ -1,0 +1,95 @@
+﻿\documentclass{article}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{CJK}
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{booktabs}
+%\usepackage{minted}
+\usepackage{pst-node}
+\usepackage{pst-text}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage[colorlinks]{hyperref}
+\usepackage{color}
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+\definecolor{grey}{rgb}{0.7,0.7,0.7}
+
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  showstringspaces=false,
+  commentstyle=\color{gray}\upshape
+}
+\lstdefinelanguage{XML}
+{
+  morestring=[b]",
+  morestring=[s]{>}{<},
+  morecomment=[s]{<?}{?>},
+  stringstyle=\color{black},
+  identifierstyle=\color{darkblue},
+  keywordstyle=\color{cyan},
+  morekeywords={xmlns,version,type}% list your attributes here
+}
+
+\title{光线跟踪大作业}
+\author{李仁杰\\2016013271\\ShadowIterator@hotmail.com}
+\date{}
+\geometry{left=2cm,right=2cm,top=1cm,bottom=1cm}
+\begin{document}
+  \maketitle
+  \section*{\color{blue}环境}
+    \noindent
+    \begin{itemize}
+        \item Visual Studio 2015 professional
+        \item C++
+        \item opencv3.4.1
+        \item Windows10-TH2-EDU
+    \end{itemize}
+
+    \section*{\color{blue}实现的算法}
+    \subsection*{\color{gray}RayTracing}
+    对应代码段在$raytracer.cpp$文件下的$Run$函数。\\
+    反射折射对应的函数声明在$raytracer.h$文件下$RayTracer$类的$CalnDiffusion$、$CalnReflection$、$CalnRefraction$成员函数。\\
+    阴影对应的函数声明在$light.h$文件下$Light$类的$CalnShade$成员函数。
+    \subsection*{\color{gray}抗锯齿}
+    对应代码段在$raytracer.cpp$文件下的$149$到$165$行。\\
+    采用边缘超采样。\\
+    判断边缘的方法：对于一个像素点，如果它周围的点发出的光线和它发出的光线碰撞到的物体(包括反射后碰撞到的物体)是一样的，则不是边缘，否则是边缘。
+    \subsection*{\color{gray}纹理贴图}
+    实现了平面和球面的纹理贴图。对应代码段在$primitive.cpp$文件下的$GetTexture$函数。
+    \section*{\color{blue}文件路径}
+        \subsubsection*{\color{black}源文件}
+        \noindent
+        \begin{lstlisting}
+        \src\HW1\HW1\HW1.cpp
+        \end{lstlisting}
+        \subsubsection*{\color{black}可执行文件}
+        \noindent
+        \begin{lstlisting}
+        \bin\HW1.exe
+        \end{lstlisting}
+        \subsubsection*{\color{black}导出图像}
+        \noindent
+        \begin{lstlisting}
+        \bin\output.png
+        \end{lstlisting}
+  \newpage
+  \section*{\color{blue}场景说明}
+  \begin{itemize}
+    \item 一个水平(平行于$XOY$平面)的地面，纹理是$floor.bmp$
+    \item 一个与$ZOY$平面平行的“墙壁”，纹理是$wallpaper-2.jpg$
+    \item 一个与$ZOX$平面平行的“镜子”
+    \item 一个放置在地面上的红色透明玻璃球
+    \item 一个悬浮在空中的无色透明玻璃球
+    \item 一个放置在地面上的大理石纹理球，纹理是$marble-3.jpg$
+    \item 一个悬浮在空中的蓝色反光正八面体
+    \item 一个天上的与$XOY$平面平行的面光源
+  \end{itemize}
+  \section*{\color{blue}参考资料}
+  主要参考了计33古裔正学长的代码。 
+\end{document}

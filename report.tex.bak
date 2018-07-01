@@ -1,0 +1,92 @@
+﻿\documentclass{article}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{CJK}
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{booktabs}
+%\usepackage{minted}
+\usepackage{pst-node}
+\usepackage{pst-text}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage[colorlinks]{hyperref}
+\usepackage{color}
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+\definecolor{grey}{rgb}{0.7,0.7,0.7}
+
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  showstringspaces=false,
+  commentstyle=\color{gray}\upshape
+}
+\lstdefinelanguage{XML}
+{
+  morestring=[b]",
+  morestring=[s]{>}{<},
+  morecomment=[s]{<?}{?>},
+  stringstyle=\color{black},
+  identifierstyle=\color{darkblue},
+  keywordstyle=\color{cyan},
+  morekeywords={xmlns,version,type}% list your attributes here
+}
+
+\title{光线跟踪大作业}
+\author{李仁杰\\2016013271\\ShadowIterator@hotmail.com}
+\date{}
+\geometry{left=2cm,right=2cm,top=1cm,bottom=1cm}
+\begin{document}
+  \maketitle
+  \section*{\color{blue}环境}
+    \noindent
+    \begin{itemize}
+        \item Visual Studio 2015 professional
+        \item C++
+        \item opencv3.4.1
+        \item Windows10-TH2-EDU
+    \end{itemize}
+
+    \section*{\color{blue}实现的算法}
+    \subsection*{\color{gray}RayTracing}
+    对应代码段在$raytracer.cpp$文件下的$Run$函数。\\
+    反射折射对应的函数声明在$raytracer.h$文件下$RayTracer$类的$CalnDiffusion$、$CalnReflection$、$CalnRefraction$成员函数。\\
+    阴影对应的函数声明在$light.h$文件下$Light$类的$CalnShade$成员函数。
+    \subsection*{\color{gray}抗锯齿}
+    对应代码段在$raytracer.cpp$文件下的$149$到$165$行。
+    采用边缘超采样。\\
+    判断边缘的方法：对于一个像素点，如果它周围的点发出的光线和它发出的光线碰撞到的物体(包括反射后碰撞到的物体)是一样的，则不是边缘，否则是边缘。
+    \subsection*{\color{gray}纹理贴图}
+    实现了平面和球面的纹理贴图。对应代码段在$primitive.cpp$文件下的$GetTexture$函数。
+    \section*{\color{blue}文件路径}
+        \subsubsection*{\color{black}源文件}
+        \noindent
+        \begin{lstlisting}
+        \src\HW1\HW1\HW1.cpp
+        \end{lstlisting}
+        \subsubsection*{\color{black}可执行文件}
+        \noindent
+        \begin{lstlisting}
+        \bin\HW1.exe
+        \end{lstlisting}
+        \subsubsection*{\color{black}导出图像}
+        \noindent
+        \begin{lstlisting}
+        \bin\output.png
+        \end{lstlisting}
+
+  \newpage
+  \section*{\color{blue}关键函数说明}
+  \begin{itemize}
+    \item $fillP(x,y,ch,val)$:画一个点，其$RGB$的第$ch$个分量的值是$val$
+    \item $drawLine(x0,y0,x1,y1,color)$:画一条从$(x0,y0)$到$(x1,y1)$的直线，颜色由一个长度为$3$的一维数组$color$指定。
+    \item $filld4(x,y,color)$:把点$(x,y)$所在的四连通区域填充成$color$指定的颜色。
+  \end{itemize}
+  \section*{\color{blue}算法简述}
+  \noindent
+  画布背景是黑色，生成了$8$个顶点的复杂多边形，然后用不同颜色填充$(300,300)$和$(2400,2000)$所在的区域，其中前一个点在多边形内部，后一个点在多边形外部。
+\end{document}

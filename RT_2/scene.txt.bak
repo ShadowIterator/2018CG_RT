@@ -1,0 +1,153 @@
+background
+	color= 0.1 0.1 0.1
+end
+
+camera
+	O= -2.73333 1.3 1.23333
+	N= 0.6 1 -0.6
+	shade_quality= 6
+	drefl_quality= 6
+	image_H= 512
+	image_W= 826
+	lens_H= 0.6
+	lens_W= 1.0
+end
+
+light area
+	O= 0 0 10
+	Dx= 2 0 0
+	Dy= 0 2 0
+	color= 1 1 1
+end
+
+primitive sphere
+	O= -1.2 5.54 -1.8
+	R= 0.2
+	refr= 1
+	rindex= 1.7
+	absor= 0 0 1
+end
+
+primitive sphere
+	O= -1.2 5 -1.8
+	R= 0.2
+	refr= 1
+	rindex= 1.7
+	absor= 0 1 0
+end
+
+primitive sphere
+	O= -0.5 5.14 -1.5
+	R= 0.2
+	color= 1 1 1
+	texture= marble.bmp
+	De= 0 0 1
+	Dc= 0 1 0
+	diff= 0.45
+	spec= 0.25
+	refl= 0.3
+	drefl= 0.25
+end
+
+
+primitive sphere
+	O= 0 5 -1.8
+	R= 0.2
+	refr= 1
+	rindex= 1.7
+	absor= 0 1 0
+end
+
+primitive sphere
+	O= 0.5 5.14 -1.8
+	R= 0.2
+	refr= 1
+	rindex= 1.7
+	absor= 0 0 1
+end
+
+primitive sphere
+	O= 1.5 6.3 -1.6
+	R= 0.4
+	color= 0.5 0.5 1
+	spec= 0.2
+	refl= 0.8
+end
+
+primitive sphere
+	O= 0 6 -1.5
+	R= 0.5
+	color= 0.9 0.2 0.3
+	refl= 0.8
+	spec= 0.2
+end
+
+primitive plane
+	N= 0 0 1
+	R= -2
+	color= 1 1 1
+	diff= 0
+//	texture= street.bmp
+	refl= 1
+	Dx= 8 0 0
+	Dy= 0 8 0
+end
+
+primitive plane
+	N= 0 0 -1
+	R= 15
+	color= 1 1 1
+	diff= 0.9
+	refl= 0.3
+	drefl= 0.85
+	Dx= 100 0 0
+	Dy= 0 100 0
+end
+
+primitive plane
+	N= 1 0 0
+	R= 8
+	color= 1 1 1
+	diff= 0.9
+	refl= 0.3
+	drefl= 0.85
+	texture= marble.bmp
+	Dx= 50 0 0
+	Dy= 0 50 0
+end
+
+primitive plane
+	N= 0 1 0
+	R= 8
+	color= 1 1 1
+	diff= 0.9
+	refl= 0.3
+	drefl= 0.85
+	texture= marble.bmp
+	Dx= 50 0 0
+	Dy= 0 50 0
+end
+
+primitive plane
+	N= -1 0 0
+	R= -8
+	color= 1 1 1
+	diff= 0.9
+	refl= 0.3
+	drefl= 0.85
+	texture= marble.bmp
+	Dx= 50 0 0
+	Dy= 0 50 0
+end
+
+primitive plane
+	N= 0 -1 0
+	R= -8
+	color= 1 1 1
+	diff= 0.9
+	refl= 0.3
+	drefl= 0.85
+	texture= marble.bmp
+	Dx= 50 0 0
+	Dy= 0 50 0
+end

@@ -1,0 +1,175 @@
+background
+color= 0.1 0.1 0.1
+end
+
+camera
+O= 6 9 4
+N= -0.6 -0.9 -0.35
+shade_quality= 4
+drefl_quality= 4
+//image_H= 512
+//image_W= 826
+image_H= 760
+image_W= 1240
+lens_H= 0.6
+lens_W= 1.0
+end
+
+light area
+O= 3 3 7
+Dx= 0.5 0 0
+Dy= 0 0.5 0
+color= 1 1 1
+end
+
+primitive triangle
+P1= 1 1 1.3
+P2= 0 1 1.3
+P3= 0.707 0.707 2.3
+color= 0.5 0.5 1
+spec= 0.2
+refl= 0.8
+end
+
+primitive triangle
+P1= 1 1 1.3
+P3= 0 1 1.3
+P2= 0.707 0.707 0.3
+color= 0.5 0.5 1
+spec= 0.2
+refl= 0.8
+end
+
+primitive triangle
+P1= 1 1 1.3
+P2= 1 0 1.3
+P3= 0.707 0.707 0.3
+color= 0.5 0.5 1
+spec= 0.2
+refl= 0.8
+end
+
+primitive triangle
+P1= 1 1 1.3
+P3= 1 0 1.3
+P2= 0.707 0.707 2.3
+color= 0.5 0.5 1
+spec= 0.2
+refl= 0.8
+end
+
+primitive triangle
+P1= 0 0 1.3
+P2= 1 0 1.3
+P3= 0.707 0.707 2.3
+color= 0.5 0.5 1
+spec= 0.2
+refl= 0.8
+end
+
+primitive triangle
+P1= 0 0 1.3
+P3= 1 0 1.3
+P2= 0.707 0.707 0.3
+color= 0.5 0.5 1
+spec= 0.2
+refl= 0.8
+end
+
+primitive triangle
+P1= 0 0 1.3
+P2= 0 1 1.3
+P3= 0.707 0.707 0.3
+color= 0.5 0.5 1
+spec= 0.2
+refl= 0.8
+end
+
+primitive triangle
+P1= 0 0 1.3
+P3= 0 1 1.3
+P2= 0.707 0.707 2.3
+color= 0.5 0.5 1
+spec= 0.2
+refl= 0.8
+end
+
+primitive sphere
+O= 2 2 0.5
+R= 0.3
+refr= 1
+rindex= 1.7
+absor= 0.3 0.3 0.3
+end
+
+primitive sphere
+O= 1 2.646 0.3
+R= 0.3
+refr= 1
+rindex= 1.7
+absor= 0 1 0
+end
+
+primitive sphere
+O= 2.946 1.3 0.5
+R= 0.5
+color= 1 1 1
+texture= marble-3.jpg
+De= 0 0 1
+Dc= 0 1 0
+diff= 0.8
+spec= 0.1
+refl= 0.1
+drefl= 0.95
+end
+
+
+primitive plane
+	N= 0 0 1
+	R= 0
+	color= 1 1 1
+	diff= 0.9
+	refl= 0
+	drefl= 0.85
+	texture= floor.bmp
+	Dx= 8 0 0
+	Dy= 0 8 0
+end
+
+primitive plane
+N= 1 0 0
+R= -1.5
+color= 1 1 1
+diff= 0.9
+spec= 0
+refl= 0
+drefl= 0.95
+texture= wallpaper-2.jpg
+Dx= 0 5 0
+Dy= 0 0 5
+end
+
+primitive plane
+N= 0 1 0
+R= -1.5
+color= 1 1 1
+diff= 0.1
+spec= 0.9
+refl= 0.9
+drefl= 0.05
+refr= 0
+end
+
+//
+//primitive plane
+//N= 0 0 -1
+//R= 10
+//color= 1 1 1
+//diff= 0.1
+//spec= 0.9
+//refl= 0.9
+//drefl= 0.05
+//texture= wallpaper.bmp
+//Dx= 1 0 0
+//Dy= 0 1 0
+//end
